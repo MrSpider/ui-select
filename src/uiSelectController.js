@@ -321,6 +321,10 @@ uis.controller('uiSelectCtrl',
     if (item === undefined || !item._uiSelectChoiceDisabled) {
 
       if ( ! ctrl.items && ! ctrl.search && ! ctrl.tagging.isActivated) return;
+      
+      if ( item !== undefined) {
+        ctrl.activeIndex = ctrl.items.indexOf(item);
+      }
 
       if (!item || !item._uiSelectChoiceDisabled) {
         if(ctrl.tagging.isActivated) {
